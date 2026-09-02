@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculadora Segura</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="calculadora">
+        <h1>Mini Calculadora Cifuentes</h1>
+
+        <form id="calculadoraForm">
+
+            <label for="numero1">Primer número:</label>
+            <input type="number" id="numero1" step="any">
+
+            <label for="numero2">Segundo número:</label>
+            <input type="number" id="numero2" step="any">
+
+            <label for="operacion">Operación:</label>
+            <select id="operacion">
+                <option value="suma">+</option>
+                <option value="resta">−</option>
+                <option value="multiplicacion">×</option>
+                <option value="division">÷</option>
+            </select>
+
+            <button type="submit">Calcular</button>
+
+        </form>
+
+        <div id="resultado">
+            Resultado: -
+        </div>
+
+        <h2>Historial</h2>
+
+        <ul id="historial"></ul>
+    </div>
+
+    <div id="mensaje">
+        <p>Si funciona, no lo toque.</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
