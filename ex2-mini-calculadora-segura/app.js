@@ -11,10 +11,14 @@ $("#calculadoraForm").submit((e) => {
 
   const { n1, n2, op } = datos;
 
-  console.log("Entrada:", { n1, n2, op });
+  console.log("---- NUEVA OPERACION ----");
+  console.log("Operacion solicitada:", op);
+  console.log("Datos de entrada:", datos);
 
   if ($("#numero1").val() === "" || $("#numero2").val() === "") {
     $("#resultado").text("Ingrese ambos números");
+    console.log("Error: Ingrese ambos números");
+    console.log("Historial:", historial);
     return;
   }
 
@@ -36,6 +40,8 @@ $("#calculadoraForm").submit((e) => {
     case "division":
       if (n2 === 0) {
         $("#resultado").text("No se puede dividir entre cero");
+        console.log("Error: No se puede dividir entre cero");
+        console.log("Historial:", historial);
         return;
       }
 
@@ -56,10 +62,6 @@ $("#calculadoraForm").submit((e) => {
   } else {
     simbolo = "÷";
   }
-
-  console.log("----NUEVA OPERACION AGREGADA-----");
-  console.log("Operacion solicitada:", op);
-  console.log("datos de entrada:", datos);
 
   historial.unshift(`${n1} ${simbolo} ${n2} = ${resultado}`);
 
